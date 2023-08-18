@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Generating Visual Scenes from Touch.">
+  <meta name="keywords" content="Vision, Touch, Diffusion">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generating Visual Scenes from Touch</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://fredfyyang.github.io/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <!-- <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a> -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Generating Visual Scenes from Touch</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://fredfyyang.github.io/">Fengyu Yang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://susan-zjc.github.io/">Jiacheng Zhang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://andrewowens.com/">Andrew Owens</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Michigan</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="fake"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="fake"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="fake"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <!-- <span class="link-block">
+                <a href="fake"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span> -->
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+		<img src="static/images/teaser-v5.png" alt="Vision2Touch Teaser">
+      <h2 class="subtitle has-text-centered">
+        We generate and manipulate images via touch.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            An emerging line of work has sought to generate plausible imagery from touch. Existing approaches, however,
+			tackle only narrow aspects of the visuo-tactile synthesis
+			problem, and lag significantly behind the quality of crossmodal synthesis methods in other domains. We draw on recent advances in latent diffusion to create a model for synthesizing images from tactile signals (and vice versa) and
+			apply it to a number of visuo-tactile synthesis tasks. Using
+			this model, we significantly outperform prior work on the
+			tactile-driven stylization problem, i.e., manipulating an image to match a touch signal, and we are the first to successfully generate images from touch without additional sources
+			of information about the scene. We also successfully use
+			our model to address two novel synthesis problems: generating images that do not contain the touch sensor or the
+			hand holding it, and estimating an image's shading from its
+			reflectance and touch
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+
+
+  </div>
+  <div class="container is-max-desktop">
+	
+	<!-- Touch-to-image Model -->
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+            <h2 class="title is-3">Touch-to-image Model</h2>
+            <div class="content has-text-justified">
+            <p>
+                We use a latent diffusion model to generate an image of a scene from touch. The touch signal is
+				represented using multiple frames of video from a GelSight sensor. The model uses a segmentation mask to optionally generate only the
+				scene content containing the pressed object (i.e., without a hand or touch sensor). We also optionally condition on reflectance from a scene,
+				in which case the model's generation task requires it to estimate shading
+            </p>
+            <img src="static/images/pipeline-v6.png" alt="Touch-to-Image Model">
+            </div>
+        </div>
+    </div>
+    <!--/ Touch-to-image Model -->
+
+
+    <!-- Visuo-tactile Cross Generation on Touch and Go dataset -->
+	  <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+            <h2 class="title is-3">Visuo-tactile Cross Generation</h2>
+            <div class="content has-text-justified">
+            <p>
+				We perform cross-modal generation, i.e., generating an
+				image from touch and vice versa, on both in-the-wild Touch
+				and Go dataset and robot-collected dataset VisGel.
+            </p>
+            <img src="static/images/touch_and_go.png" alt="Visuo-tactile Cross Generation">
+            </div>
+        </div>
+    </div>
+    <!--/ Visuo-tactile Cross Generation on Touch and Go dataset -->
+
+
+	<!-- Tactile-driven Image Stylization -->
+	<div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+            <h2 class="title is-3">Tactile-driven Image Stylization</h2>
+            <div class="content has-text-justified">
+              <p>
+              We restyle the input image using the given touch signal (reference image from scene
+              provided for clarity). We compare our approach to Yang et al. Our approach generates images with higher quality matching more
+              closely to the given tactile signal.
+              </p>
+            <!-- <img src="static/images/tdis-v2.png" alt="Tactile-driven Image Stylization"> -->
+            </div>
+            <div class="video-container">
+              <img src="static/images/tdis_ref_wood.png" alt="tdis wood ref" width="32%">  
+              <video id="teaser" autoplay muted loop playsinline>
+              <source src="./static/videos/wood1.mp4"
+                      type="video/mp4">
+              </video>
+              <video id="teaser" autoplay muted loop playsinline>
+                <source src="./static/videos/wood2.mp4"
+                        type="video/mp4">
+              </video>
+              <video id="teaser" autoplay muted loop playsinline>
+                <source src="./static/videos/wood3.mp4"
+                        type="video/mp4">
+              </video>
+              <video id="teaser" autoplay muted loop playsinline>
+              <source src="./static/videos/wood4.mp4"
+                      type="video/mp4">
+              </video>
+            </div>
+            <div class="video-container">
+              <img src="static/images/tdis_ref_stone.png" alt="tdis wood ref" width="32%">  
+              <video id="teaser" autoplay muted loop playsinline>
+              <source src="./static/videos/stone1.mp4"
+                      type="video/mp4">
+              </video>
+              <video id="teaser" autoplay muted loop playsinline>
+                <source src="./static/videos/stone2.mp4"
+                        type="video/mp4">
+              </video>
+              <video id="teaser" autoplay muted loop playsinline>
+                <source src="./static/videos/stone3.mp4"
+                        type="video/mp4">
+              </video>
+              <video id="teaser" autoplay muted loop playsinline>
+                <source src="./static/videos/stone4.mp4"
+                        type="video/mp4">
+                </video>
+            </div>
+            
+        </div>
+    </div>
+    <!--/ Tactile-driven Image Stylization -->
+
+	<!-- Tactile-driven Shading Estimation -->
+	<div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+            <h2 class="title is-3">Tactile-driven Shading Estimation</h2>
+            <div class="content has-text-justified">
+            <p>
+				We hypothesize that the tactile signal conveys information about the microgeometry of an image, and thus allows a
+				model to produce more accurate images than a reflectance-to-image model that does not have access to touch.
+
+            </p>
+            <img src="static/images/ref2img-v2.png" alt="ref-to-image">
+            </div>
+        </div>
+    </div>
+    <!--/Tactile-driven Shading Estimation -->
+  </div>
+</section>
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="fake">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="fake" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <!-- <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p> -->
+          <p>
+            The webpage templage was adopted from <a
+			href="https://github.com/nerfies/nerfies.github.io">here</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
