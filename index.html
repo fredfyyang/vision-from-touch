@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Generating Visual Scenes from Touch.">
+        content="Vision to Touch Cross-Modal Generation">
   <meta name="keywords" content="Vision, Touch, Diffusion">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Generating Visual Scenes from Touch</title>
+  <title>Vision to Touch Cross-Modal Generation</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -36,35 +36,6 @@
       <span aria-hidden="true"></span>
     </a>
   </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://fredfyyang.github.io/">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <!-- <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a> -->
-        </div>
-      </div>
-    </div>
-
   </div>
 </nav>
 
@@ -74,7 +45,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Generating Visual Scenes from Touch</h1>
+          <h1 class="title is-1 publication-title">Vision to Touch Cross-Modal Generation</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://fredfyyang.github.io/">Fengyu Yang</a><sup>1</sup>,</span>
@@ -111,7 +82,7 @@
                 </a>
               </span>
               <!-- Video Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="fake"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -119,17 +90,17 @@
                   </span>
                   <span>Video</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Code Link. -->
-              <!-- <span class="link-block">
-                <a href="fake"
+              <span class="link-block">
+                <a href="https://github.com/fredfyyang/vision-from-touch"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
                   <span>Code</span>
                   </a>
-              </span> -->
+              </span>
               <!-- Dataset Link. -->
               <!-- <span class="link-block">
                 <a href="https://github.com/google/nerfies/releases/tag/0.1"
@@ -148,42 +119,64 @@
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-		<img src="static/images/teaser-v5.png" alt="Vision2Touch Teaser">
-      <h2 class="subtitle has-text-centered">
-        We generate and manipulate images via touch.
-      </h2>
-    </div>
-  </div>
-</section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+      <!-- Touch to Vision -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Vision to Touch Generation</h2>
+          <img id="ref" src="./static/images/c1.png" alt="Image on the left" width="160px" onmouseover="changeImage()" onmouseout="revertImage()">
+          <img id="out" src="./static/images/r1.png" alt="Image on the right" width="160px">
+          <script src="script.js"></script>
+        </div>
+      </div>
+      <!--/ Touch to Vision -->
+
+      <!-- TDIS -->
+      <div class="column">
+        <h2 class="title is-3">Tactile-driven Image Stylization</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <img id="ref" src="./static/images/c2_ref.png" alt="Image on the left"  width="152px">
+            <img id="ref" src="./static/images/c2_touch.png" alt="Image on the left" width="152px" onmouseover="changeImage_tdis()" onmouseout="revertImage_tdis()">
+            <img id="tdis_out" src="./static/images/r2.png" alt="Image on the right"  width="152px">
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--/ TDIS -->
+  </section>
 
 
 <section class="section">
   <div class="container is-max-desktop">
+
+    <div class="column is-centered">
+      
+
+    </div>
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            An emerging line of work has sought to generate plausible imagery from touch. Existing approaches, however,
-			tackle only narrow aspects of the visuo-tactile synthesis
-			problem, and lag significantly behind the quality of crossmodal synthesis methods in other domains. We draw on recent advances in latent diffusion to create a model for synthesizing images from tactile signals (and vice versa) and
-			apply it to a number of visuo-tactile synthesis tasks. Using
-			this model, we significantly outperform prior work on the
-			tactile-driven stylization problem, i.e., manipulating an image to match a touch signal, and we are the first to successfully generate images from touch without additional sources
-			of information about the scene. We also successfully use
-			our model to address two novel synthesis problems: generating images that do not contain the touch sensor or the
-			hand holding it, and estimating an image's shading from its
-			reflectance and touch
+            Utilizing latent diffusion techniques, our model advances the state-of-the-art in visuo-tactile synthesis. 
+            It exceeds previous benchmarks in tactile-driven image stylization and is the first to generate images using touch data alone. 
+            The model also introduces new functionalities, including sensor-free image generation and touch-based shading estimation.
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
+
+
+
 
     <!-- Paper video. -->
     <!-- <div class="columns is-centered has-text-centered">
@@ -201,22 +194,7 @@
   </div>
   <div class="container is-max-desktop">
 	
-	<!-- Touch-to-image Model -->
-    <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-            <h2 class="title is-3">Touch-to-image Model</h2>
-            <div class="content has-text-justified">
-            <p>
-                We use a latent diffusion model to generate an image of a scene from touch. The touch signal is
-				represented using multiple frames of video from a GelSight sensor. The model uses a segmentation mask to optionally generate only the
-				scene content containing the pressed object (i.e., without a hand or touch sensor). We also optionally condition on reflectance from a scene,
-				in which case the model's generation task requires it to estimate shading
-            </p>
-            <img src="static/images/pipeline-v6.png" alt="Touch-to-Image Model">
-            </div>
-        </div>
-    </div>
-    <!--/ Touch-to-image Model -->
+
 
 
     <!-- Visuo-tactile Cross Generation on Touch and Go dataset -->
@@ -306,6 +284,24 @@
         </div>
     </div>
     <!--/Tactile-driven Shading Estimation -->
+
+
+    	<!-- Touch-to-image Model -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+            <h2 class="title is-3">Touch-to-image Model</h2>
+            <div class="content has-text-justified">
+            <p>
+                We use a latent diffusion model to generate an image of a scene from touch. The touch signal is
+				represented using multiple frames of video from a GelSight sensor. The model uses a segmentation mask to optionally generate only the
+				scene content containing the pressed object (i.e., without a hand or touch sensor). We also optionally condition on reflectance from a scene,
+				in which case the model's generation task requires it to estimate shading
+            </p>
+            <img src="static/images/pipeline-v6.png" alt="Touch-to-Image Model">
+            </div>
+        </div>
+    </div>
+    <!--/ Touch-to-image Model Architecture-->
   </div>
 </section>
 
