@@ -170,7 +170,7 @@ body {
 .video-teaser {
   width: 100%;
   height: 0;
-  padding-bottom: 56.25%;  /* This is for 16:9 video ratio. Adjust if your video has a different aspect ratio */
+  padding-bottom: 50%;
   position: relative;
 }
 
@@ -179,7 +179,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   object-fit: cover;
   clip-path: inset(0.1px);
 }
