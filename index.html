@@ -129,7 +129,7 @@
       <div class="column">
         <!-- <div class="content"> -->
           <h2 class="title is-3">Touch-to-Vision Generation</h2>
-          <div class="video-teaser-left">
+          <div class="video-teaser">
             <video autoplay muted loop>
               <source src="./static/videos/teaser1_1.mp4"
                       type="video/mp4">
@@ -167,9 +167,16 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Utilizing latent diffusion techniques, our model advances the state-of-the-art in visuo-tactile synthesis. 
-            It exceeds previous benchmarks in tactile-driven image stylization and is the first to generate images using touch data alone. 
-            The model also introduces new functionalities, including sensor-free image generation and touch-based shading estimation.
+            An emerging line of work has sought to generate plausible imagery from touch. Existing approaches, however,
+            tackle only narrow aspects of the visuo-tactile synthesis
+            problem, and lag significantly behind the quality of crossmodal synthesis methods in other domains. We draw on recent advances in latent diffusion to create a model for synthesizing images from tactile signals (and vice versa) and
+            apply it to a number of visuo-tactile synthesis tasks. Using
+            this model, we significantly outperform prior work on the
+            tactile-driven stylization problem, i.e., manipulating an image to match a touch signal, and we are the first to successfully generate images from touch without additional sources
+            of information about the scene. We also successfully use
+            our model to address two novel synthesis problems: generating images that do not contain the touch sensor or
+            the hand holding it, and estimating an image's shading
+            from its reflectance and touch.
           </p>
         </div>
       </div>
