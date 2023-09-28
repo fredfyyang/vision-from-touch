@@ -144,7 +144,7 @@
         <h2 class="title is-3">Tactile-driven Image Stylization</h2>
         <div class="video-teaser">
           <video autoplay muted loop >
-            <source src="./static/videos/teaser2_2.mp4" 
+            <source src="./static/videos/teaser2.mp4" 
                     type="video/mp4">
           </video>
         </div>
@@ -222,6 +222,7 @@
     <!--/ Visuo-tactile Cross Generation on Touch and Go dataset -->
 
 
+
 	<!-- Tactile-driven Image Stylization -->
 	<div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
@@ -236,39 +237,39 @@
             </div>
             <div class="video-container">
               <img src="static/images/tdis_ref_wood.jpg" alt="tdis wood ref" width="32%">  
-              <video id="teaser" autoplay muted loop playsinline>
-              <source src="./static/videos/wood1_1.mp4"
+              <video id="teaser" class="sync" muted loop playsinline>
+              <source src="./static/videos/edited_videos/wood1_1.mp4"
                       type="video/mp4">
               </video>
-              <video id="teaser" autoplay muted loop playsinline>
-                <source src="./static/videos/wood2_1.mp4"
+              <video id="teaser" class="sync" muted loop playsinline>
+                <source src="./static/videos/edited_videos/wood2_1.mp4"
                         type="video/mp4">
               </video>
-              <video id="teaser" autoplay muted loop playsinline>
-                <source src="./static/videos/wood3_1.mp4"
+              <video id="teaser" class="sync" muted loop playsinline>
+                <source src="./static/videos/edited_videos/wood3_1.mp4"
                         type="video/mp4">
               </video>
-              <video id="teaser" autoplay muted loop playsinline>
-              <source src="./static/videos/wood4_1.mp4"
+              <video id="teaser" class="sync" muted loop playsinline>
+              <source src="./static/videos/edited_videos/wood4_1.mp4"
                       type="video/mp4">
               </video>
             </div>
             <div class="video-container">
               <img src="static/images/tdis_ref_stone.jpg" alt="tdis wood ref" width="32%">  
-              <video id="teaser" autoplay muted loop playsinline>
-              <source src="./static/videos/stone1_1.mp4"
+              <video id="teaser" class="sync" muted loop playsinline>
+              <source src="./static/videos/edited_videos/stone1_1.mp4"
                       type="video/mp4">
               </video>
-              <video id="teaser" autoplay muted loop playsinline>
-                <source src="./static/videos/stone2_1.mp4"
+              <video id="teaser" class="sync" muted loop playsinline>
+                <source src="./static/videos/edited_videos/stone2_1.mp4"
                         type="video/mp4">
               </video>
-              <video id="teaser" autoplay muted loop playsinline>
-                <source src="./static/videos/stone3_1.mp4"
+              <video id="teaser" class="sync" muted loop playsinline>
+                <source src="./static/videos/edited_videos/stone3_1.mp4"
                         type="video/mp4">
               </video>
-              <video id="teaser" autoplay muted loop playsinline>
-                <source src="./static/videos/stone4_1.mp4"
+              <video id="teaser" class="sync" muted loop playsinline>
+                <source src="./static/videos/edited_videos/stone4_1.mp4"
                         type="video/mp4">
                 </video>
             </div>
@@ -356,5 +357,21 @@
   </div>
 </footer>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      const videos = document.querySelectorAll('.sync');
+      let loadedVideos = 0;
+
+      videos.forEach(video => {
+          video.addEventListener('canplay', function () {
+              loadedVideos += 1;
+
+              if (loadedVideos === videos.length) {
+                  videos.forEach(v => v.play());
+              }
+          });
+      });
+  });
+</script>
 </body>
 </html>
